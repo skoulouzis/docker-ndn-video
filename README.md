@@ -4,10 +4,10 @@ The following give you a NDN video server
 $ git clone --depth 1 https://github.com/lasse-ufpa/lasseubuntu.git
 $ docker build -t lasseubuntu:14.04 lasseubuntu/ubuntu-14.04/
 
-$ git clone --depth 1 https://github.com/lasse-ufpa/ndn-with-docker.git
+$ git clone --depth 1 https://github.com/skoulouzis/ndn-with-docker.git
 $ docker build -t lassendn:latest ndn-with-docker/ubuntu-14.04/
 
-$ git clone --depth 1 https://github.com/lasse-ufpa/docker-ndn-video.git
+$ git clone --depth 1 https://github.com/skoulouzis/docker-ndn-video.git
 $ docker build -t ndnvideo docker-ndn-video/
 
 $ docker run -it --rm --name ndn -p 6363:6363 ndnvideo /bin/bash
