@@ -1,18 +1,19 @@
-FROM lassendn:latest
+FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get -y install libboost-dev
+RUN apt-get -y update && apt-get -y upgrade
+RUN apt-get -y install libboost-dev 
 RUN apt-get -y install gstreamer1.0-dev libgstreamer-plugins-base1.0-dev \
     gstreamer1.0-plugins-bad-videoparsers gstreamer1.0-plugins-good \
     gstreamer1.0-libav
-RUN apt-get -y install youtube-dl
+RUN apt-get -y install youtube-dl curl git
 
 WORKDIR /root
 
 RUN git clone --depth 1 https://github.com/PhdLoLi/NDNtube.git
 
-RUN cd NDNtube &&\
+WORKDIR NDNtube &&\
     ./waf configure &&\
     ./waf
 
